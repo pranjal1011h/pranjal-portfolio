@@ -1,7 +1,0 @@
-const phrases=["Python development","Java & Android apps","web development","data analysis","real-world projects"];
-const typing=document.getElementById('typing');let pi=0,ci=0,del=false;
-function typeLoop(){const p=phrases[pi];typing.textContent=p.slice(0,ci);if(!del&&ci<p.length){ci++;setTimeout(typeLoop,65)}else if(!del){del=true;setTimeout(typeLoop,1200)}else if(ci>0){ci--;setTimeout(typeLoop,34)}else{del=false;pi=(pi+1)%phrases.length;setTimeout(typeLoop,300)}} typeLoop();
-const words=['software','applications','web experiences','useful ideas'];let wi=0;const hw=document.getElementById('hero-word');setInterval(()=>{hw.animate([{opacity:1,transform:'translateY(0)'},{opacity:0,transform:'translateY(-8px)'}],{duration:180}).onfinish=()=>{wi=(wi+1)%words.length;hw.textContent=words[wi];hw.animate([{opacity:0,transform:'translateY(8px)'},{opacity:1,transform:'translateY(0)'}],{duration:220})}},2400);
-const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
-const menu=document.querySelector('.menu-toggle'),nav=document.querySelector('.navbar');menu.addEventListener('click',()=>nav.classList.toggle('open'));document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
-const glow=document.querySelector('.cursor-glow');window.addEventListener('pointermove',e=>{glow.style.left=e.clientX+'px';glow.style.top=e.clientY+'px'});
